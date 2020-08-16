@@ -3,6 +3,8 @@ export default function CharacterCard(props) {
 
    const [active,setActive] = useState(false);
    const attemptRef = useRef(props.attempt);
+   const scoreRef = useRef(props.score);
+
    const activate = () => {
        if(!active){
          setActive(true)
@@ -14,6 +16,10 @@ export default function CharacterCard(props) {
         if(attemptRef.current != props.attempt){
             setActive(false);
             attemptRef.current = props.attempt
+        }
+        else if(scoreRef.current != props.score){
+            setActive(false);
+            scoreRef.current = props.score
         }
    })
    const className = `card ${active ? 'activeCard': ''}`

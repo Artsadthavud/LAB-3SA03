@@ -28,7 +28,7 @@ const [state, setState] = useState(prepareStateFromWord(props.value))
             if(guess.length == state.word.length){
                 if(guess == state.word){
                     console.log('yeah you win !! ')
-                    setState({...state , completed: true,score: state.score +1})
+                    setState({...state ,guess: '',score: state.score +1})
                     console.log('yeah your win score = %d',state.score)
                 }
                 else{
@@ -37,7 +37,6 @@ const [state, setState] = useState(prepareStateFromWord(props.value))
                     console.log('yeah your lose score = %d',state.attempt)
                 }
             }
-           
     }
     return (
         <div>
