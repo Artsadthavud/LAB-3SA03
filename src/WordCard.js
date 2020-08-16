@@ -34,6 +34,7 @@ const [state, setState] = useState(prepareStateFromWord(props.value))
                 else{
                     console.log('reset, next attempt try again')
                     setState({...state, guess: '' ,attempt: state.attempt +1})
+                    console.log('yeah your lose score = %d',state.attempt)
                 }
             }
            
