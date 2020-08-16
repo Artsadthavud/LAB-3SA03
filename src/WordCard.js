@@ -9,6 +9,7 @@ const prepareStateFromWord = given_word =>{
         word,
         chars,
         attempt: 1,
+        score: 1,
         guess : '',
         completed: false
     }
@@ -26,8 +27,9 @@ const [state, setState] = useState(prepareStateFromWord(props.value))
 
             if(guess.length == state.word.length){
                 if(guess == state.word){
-                    console.log('yeah you win !!')
-                    setState({...state , completed: true})
+                    console.log('yeah you win !! ')
+                    setState({...state , completed: true,score: state.score +1})
+                    console.log('yeah your win score = %d',state.score)
                 }
                 else{
                     console.log('reset, next attempt try again')
@@ -40,7 +42,7 @@ const [state, setState] = useState(prepareStateFromWord(props.value))
         <div>
              {
                 state.chars.map((c, i) => 
-                <CharacterCard value = {c} key={i} activationHandler = {activationHandler} attempt ={state.attempt}/>)
+                <CharacterCard value = {c} key={i} activationHandler = {activationHandler} attempt ={state.attempt} score={state.score}/>)
              }
         </div>
     )
