@@ -17,7 +17,7 @@ export default function CharacterCard(props) {
             setActive(false);
             attemptRef.current = props.attempt
         }
-        else if(scoreRef.current != props.score){
+        else if(scoreRef.current != props.score && props.score < 6){
             setActive(false);
             scoreRef.current = props.score
         }
