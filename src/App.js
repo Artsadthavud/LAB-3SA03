@@ -22,11 +22,12 @@ class App extends Component {
    <br/>
    *** if need to see your lose Score you can use console
    <br/>
+   **** if you lose 5 time your word will reset
    <br/>
    <br/>
    <br/>
    <br/>
-   
+ 
  </div>
  );
  }

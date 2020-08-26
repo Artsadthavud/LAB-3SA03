@@ -15,12 +15,7 @@ const prepareStateFromWord = given_word =>{
     }
 }
 
-function counter(){
-    var sco = 0
-    var ans = 0
-    ans =  sco + 1
-    return ans
-}
+var scoreLose = 0
 
 export default function WordCard(props){
 
@@ -44,7 +39,10 @@ const [state, setState] = useState(prepareStateFromWord(props.value))
                     console.log('reset, next attempt try again')
                     setState({...state, guess: '' ,attempt: state.attempt +1})
                     console.log('yeah your lose score = %d',state.attempt)
-                    counter();
+                    scoreLose += 1
+                        if(scoreLose == 5){
+                            window.location.reload();
+                        }
                 }
             }
     }
