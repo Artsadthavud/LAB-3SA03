@@ -30,6 +30,7 @@ const [state, setState] = useState(prepareStateFromWord(props.value))
                     console.log('yeah you win !! ')
                     setState({...state ,guess: '',score: state.score +1})
                     console.log('yeah your win score = %d',state.score)
+                    state.word = state.word+1;
                 }
                 else{
                     console.log('reset, next attempt try again')
