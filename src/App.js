@@ -24,9 +24,20 @@ class App extends Component {
    <br/>
    **** if you lose 5 time your word will reset
    <br/>
+   ***** if you need help you can press button Hint
    <br/>
    <br/>
    <br/>
+   <br/>
+   <button
+    onClick={e =>
+        window.confirm("You must choose character 1 by 1 to be the right word !!!")
+    }
+>
+  
+    Hint
+</button>
+
  
  </div>
  );
