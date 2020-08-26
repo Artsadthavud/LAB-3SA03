@@ -1,27 +1,45 @@
-import React, { Component } from 'react';
+import React, { Component,useState } from 'react';
+
 import './App.css';
 
 import WordCard from './WordCard';
+  
 class App extends Component {
    word = wordItems();
+  
  render() {
+
  return (
+   
  <div className="App">
-   Hello Player !!
+   <h2>Hello Player!!</h2>
   <br/>
-  Choose the right word to get Score
+  Choose the right word to get New word
   <WordCard value={this.word}/>     
-   ** if you need to change word please refresh page
+   ** if you need to change word you can press the botton re-word
    <br/>
-   *** if need to see Score you can use console
+   <button type="button" onClick={ refreshPage }> <span>re-word</span> </button> 
+   <br/>
+   *** if need to see your lose Score you can use console
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   
  </div>
  );
  }
 }
 
+function refreshPage(){ 
+  window.location.reload(); 
+}
 function wordItems() {
-  const stockWord = ["hello", "world", "react","native"];
-  var rand = Math.floor(Math.random() * Math.floor(4));
+  const stockWord = ["hello", "world", "react","native","engineer","dota2","start","refresh","hint","school"];
+  var rand = Math.floor(Math.random() * Math.floor(10));
   return stockWord[rand];
 }
+
+
 export default App;
